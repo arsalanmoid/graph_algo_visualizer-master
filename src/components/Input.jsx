@@ -185,14 +185,14 @@ function Input({
               ),
             disabled: !source || isRunning,
           },
-          {
-            label: "Strongly Connected Components",
-            onClick: () =>
-              runWithLock(() =>
-                handleSCC(nodes, setNodes, adjList, isDirected, speedrunRef, links, setLinksData)
-              ),
-            disabled: !isDirected || isRunning,
-          },
+          // {
+          //   label: "Strongly Connected Components",
+          //   onClick: () =>
+          //     runWithLock(() =>
+          //       handleSCC(nodes, setNodes, adjList, isDirected, speedrunRef, links, setLinksData)
+          //     ),
+          //   disabled: !isDirected || isRunning,
+          // },
           {
             label: "Cycle Detection",
             onClick: () =>
@@ -243,38 +243,38 @@ function Input({
               ),
             disabled: isDirected || !isWeighted || isRunning,
           },
-          {
-            label: "Euler Path",
-            onClick: () =>
-              runWithLock(() =>
-                handleEulerPath(
-                  nodes,
-                  links,
-                  setNodes,
-                  setLinksData,
-                  speedrunRef, 
-                  isDirected,
-                  setResult
-                )
-              ),
-            disabled: isRunning,
-          },
-          {
-            label: "Euler Circuit",
-            onClick: () =>
-              runWithLock(() =>
-                handleEulerCircuit(
-                  nodes,
-                  links,
-                  setNodes,
-                  setLinksData,
-                  speedrunRef,
-                  isDirected,
-                  setResult
-                )
-              ),
-            disabled: isRunning,
-          },
+          // {
+          //   label: "Euler Path",
+          //   onClick: () =>
+          //     runWithLock(() =>
+          //       handleEulerPath(
+          //         nodes,
+          //         links,
+          //         setNodes,
+          //         setLinksData,
+          //         speedrunRef, 
+          //         isDirected,
+          //         setResult
+          //       )
+          //     ),
+          //   disabled: isRunning,
+          // },
+          // {
+          //   label: "Euler Circuit",
+          //   onClick: () =>
+          //     runWithLock(() =>
+          //       handleEulerCircuit(
+          //         nodes,
+          //         links,
+          //         setNodes,
+          //         setLinksData,
+          //         speedrunRef,
+          //         isDirected,
+          //         setResult
+          //       )
+          //     ),
+          //   disabled: isRunning,
+          // },
         ].map(({ label, onClick, disabled }) => (
           <button
             key={label}
